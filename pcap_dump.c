@@ -40,7 +40,7 @@ int pd_write(int fd, char * buf, int len, struct timeval tv) {
     h.caplen = len;
     h.len = len;
 
-    char * ptr = &h;
+    char * ptr = (char*) &h;
     while (left > 0) {
         ret = write(fd, ptr, left);
         left -= ret;
