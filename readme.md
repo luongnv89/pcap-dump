@@ -59,4 +59,6 @@ So you need to define your own pcap struct to avoid the possible mismatch bit.
 
 ### Change logs
 
+- 20/04/2017: Add `dumpdump` example
+
 - 20/04/2017: Fork project, add comments, update name convention (sorry @NachtZ but I prefer my convention), update readme.md
