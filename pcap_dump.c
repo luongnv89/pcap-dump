@@ -1,9 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <sys/types.h>
-#include <sys/stat.h>
 #include <unistd.h>
+#include <sys/time.h>
 #include <fcntl.h>
 #include "pcap_dump.h"
 
@@ -65,13 +61,13 @@ int pd_create(const char * path, int linktype, int thiszone, int snaplen) {
     int pos = lseek(fd, 0, SEEK_END);
     if (pos == -1)return -1;
     if (pos == 0) {
-        pd_write_pcap_header_file(fd, linktype, thiszone, snaplen);
+        pd_write_header(fd, linktype, thiszone, snaplen);
     }
     return fd;
 }
 
 int pd_open(const char * path) {
-    return pcap_create(path, 1, 0, 65535);
+    return pd_create(path, 1, 0, 65535);
 }
 
 void pd_close(int fd) {

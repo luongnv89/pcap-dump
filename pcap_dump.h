@@ -3,6 +3,7 @@
  */
 #ifndef PCAP_DUMP_H_
 #define PCAP_DUMP_H_
+#include <stdint.h>
 
 struct pd_timeval {
 	uint32_t tv_sec;     /* seconds */
