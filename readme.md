@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/luongnv89/pcap_dump.svg?branch=master)](https://travis-ci.org/luongnv89/pcap_dump)
+
 ### Introduce
 
 A common c/cpp api for dump network traffics as pcap file.
