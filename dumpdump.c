@@ -33,7 +33,17 @@
 #define MAX_FILENAME_SIZE 256
 #define TRACE_FILE 1
 #define LIVE_INTERFACE 2
-#define DUMPDUMP_VERSION "1.0.0.0"
+
+#ifndef VERSION
+    #define VERSION "1.0.0.0"
+#endif
+
+#ifdef GIT_VERSION
+    //GIT_VERSION is given by Makefile
+    #define DUMPDUMP_VERSION VERSION " (" GIT_VERSION ")"
+#else
+    #define DUMPDUMP_VERSION VERSION
+#endif
 
 pcap_t *pcap; // Pcap handler
 struct pcap_stat pcs; /* packet capture filter stats */
