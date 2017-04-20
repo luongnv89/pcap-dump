@@ -1,0 +1,6 @@
+install: 
+  - apt-get install -y libpcap-dev
+script:
+  - make
+  - make test
+  - ls
